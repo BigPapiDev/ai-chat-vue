@@ -1,0 +1,14 @@
+/**
+ * Stylesheet with Tailwind CSS v4 imports
+ * Design tokens from STITCH_DESIGN.md
+ * TODO Fase 4: Import and extend with custom tokens
+ */
+
+@import "tailwindcss";
+
+/* TODO Fase 4: Add custom design tokens from STITCH_DESIGN.md */
+/* - Surface colors (#0b1326, #171f33, etc.) */
+/* - Primary colors (#adc6ff, #4d8eff) */
+/* - Typography (Inter font) */
+/* - Spacing (4px grid) */
+/* - Glassmorphism effects */

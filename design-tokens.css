@@ -1,0 +1,135 @@
+/**
+ * Design Tokens - Material Design 3 Dark Theme
+ * Estratti da Google Stitch - AI Chat Interface
+ * Progetto: One Page
+ * Data: 2026-03-23
+ */
+
+:root {
+  /* ============================================
+     SURFACE COLORS (Background layers)
+     ============================================ */
+  --surface-darkest: #060e20;
+  --surface-dark: #0b1326;
+  --surface-base: #171f33;
+  --surface-elevated: #131b2e;
+  --surface-overlay: #222a3d;
+  --surface-highest: #2d3449;
+  --surface-glass: rgba(49, 57, 77, 0.4);
+
+  /* ============================================
+     PRIMARY COLORS (Main brand/interactive)
+     ============================================ */
+  --primary-lightest: #d8e2ff;
+  --primary-light: #adc6ff;
+  --primary-base: #4d8eff;
+  --primary-dark: #005ac2;
+
+  /* ============================================
+     SECONDARY COLORS (Supporting accent)
+     ============================================ */
+  --secondary-light: #b1c6f9;
+  --secondary-dark: #304671;
+
+  /* ============================================
+     TERTIARY COLORS (Highlight/emphasis)
+     ============================================ */
+  --tertiary-light: #ffb786;
+  --tertiary-base: #df7412;
+  --tertiary-lightest: #ffdcc6;
+
+  /* ============================================
+     ERROR COLORS
+     ============================================ */
+  --error-light: #ffb4ab;
+  --error-dark: #93000a;
+
+  /* ============================================
+     OUTLINE & BORDERS
+     ============================================ */
+  --outline-strong: #8c909f;
+  --outline-subtle: #424754;
+
+  /* ============================================
+     ON-SURFACE TEXT COLORS
+     ============================================ */
+  --on-surface-primary: #dae2fd;
+  --on-surface-secondary: #c2c6d6;
+
+  /* ============================================
+     GLASSMORPHISM EFFECTS
+     ============================================ */
+  --glass-background: rgba(49, 57, 77, 0.4);
+  --glass-backdrop: blur(20px);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+
+  /* ============================================
+     TYPOGRAPHY
+     ============================================ */
+  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-size-base: 14px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  /* ============================================
+     BORDER RADIUS
+     ============================================ */
+  --radius-sm: 0.25rem;
+  --radius-base: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+  /* ============================================
+     SPACING SYSTEM (4px grid)
+     ============================================ */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ============================================
+     LAYOUT DIMENSIONS
+     ============================================ */
+  --sidebar-width: 260px;
+  --header-height: 64px;
+  --command-bar-height: 56px;
+
+  /* ============================================
+     ANIMATION & TRANSITIONS
+     ============================================ */
+  --transition-fast: 150ms ease-out;
+  --transition-base: 300ms ease-out;
+  --transition-slow: 500ms ease-out;
+  --animation-blink: blink 1s infinite;
+  --animation-pulse: pulse 1.5s ease-in-out infinite;
+}
+
+/* ============================================
+   KEYFRAME ANIMATIONS
+   ============================================ */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+/* Streaming indicator animation */
+@keyframes streaming-dot {
+  0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-4px); }
+}

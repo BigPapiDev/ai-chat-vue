@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+/* Design tokens da STITCH_DESIGN.md — Material Design 3 Dark */
+@theme {
+  --color-surface: #0b1326;
+  --color-surface-container: #171f33;
+  --color-surface-container-low: #131b2e;
+  --color-surface-container-high: #222a3d;
+  --color-surface-container-highest: #2d3449;
+  --color-surface-container-lowest: #060e20;
+  --color-surface-bright: #31394d;
+  --color-surface-dim: #0b1326;
+  --color-surface-variant: #2d3449;
+  --color-surface-tint: #adc6ff;
+
+  --color-primary: #adc6ff;
+  --color-primary-container: #4d8eff;
+  --color-primary-fixed: #d8e2ff;
+  --color-primary-fixed-dim: #adc6ff;
+  --color-inverse-primary: #005ac2;
+
+  --color-on-surface: #dae2fd;
+  --color-on-surface-variant: #c2c6d6;
+  --color-on-primary: #002e6a;
+  --color-on-primary-container: #00285d;
+  --color-on-primary-fixed: #001a42;
+  --color-on-primary-fixed-variant: #004395;
+  --color-on-background: #dae2fd;
+  --color-inverse-on-surface: #283044;
+  --color-inverse-surface: #dae2fd;
+  --color-background: #0b1326;
+
+  --color-secondary: #b1c6f9;
+  --color-secondary-container: #304671;
+  --color-secondary-fixed: #d8e2ff;
+  --color-secondary-fixed-dim: #b1c6f9;
+  --color-on-secondary: #182f59;
+  --color-on-secondary-container: #9fb5e7;
+  --color-on-secondary-fixed: #001a42;
+  --color-on-secondary-fixed-variant: #304671;
+
+  --color-tertiary: #ffb786;
+  --color-tertiary-container: #df7412;
+  --color-tertiary-fixed: #ffdcc6;
+  --color-tertiary-fixed-dim: #ffb786;
+  --color-on-tertiary: #502400;
+  --color-on-tertiary-container: #461f00;
+  --color-on-tertiary-fixed: #311400;
+  --color-on-tertiary-fixed-variant: #723600;
+
+  --color-error: #ffb4ab;
+  --color-error-container: #93000a;
+  --color-on-error: #690005;
+  --color-on-error-container: #ffdad6;
+
+  --color-outline: #8c909f;
+  --color-outline-variant: #424754;
+
+  --font-family-headline: "Inter", sans-serif;
+  --font-family-body: "Inter", sans-serif;
+  --font-family-label: "Inter", sans-serif;
+}
+
+/* === THEME VARIABLES === */
+
+/* Dark mode (default) */
+:root, html.dark {
+  --app-bg: #0b1326;
+  --app-text: #dae2fd;
+  --sidebar-bg: #0b1326;
+  --sidebar-border: rgba(66, 71, 84, 0.1);
+  --header-bg: rgba(11, 19, 38, 0.6);
+  --card-bg: #131b2e;
+  --input-bg: rgba(49, 57, 77, 0.4);
+  --input-border: rgba(66, 71, 84, 0.15);
+  --input-text: #dae2fd;
+  --input-placeholder: rgba(194, 198, 214, 0.4);
+  --text-primary: #dae2fd;
+  --text-secondary: #c2c6d6;
+  --text-brand: #dbeafe;
+  --text-accent: #adc6ff;
+  --text-accent-subtle: rgba(173, 198, 255, 0.6);
+  --accent-color: #4d8eff;
+  --accent-hover: #adc6ff;
+  --hover-bg: rgba(59, 130, 246, 0.1);
+  --hover-bg-subtle: rgba(49, 57, 77, 0.5);
+  --new-chat-bg: rgba(59, 130, 246, 0.1);
+  --new-chat-text: #60a5fa;
+  --bubble-user-bg: rgba(77, 142, 255, 0.2);
+  --bubble-ai-bg: rgba(49, 57, 77, 0.4);
+  --bubble-ai-border: rgba(255, 255, 255, 0.08);
+  --bubble-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  --input-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  --input-focus-border: rgba(173, 198, 255, 0.3);
+  --profile-bg: #131b2e;
+  --scrollbar-thumb: #2d3449;
+  --engine-badge-bg: rgba(45, 52, 73, 0.4);
+  --send-btn-bg: linear-gradient(to top right, #adc6ff, #4d8eff);
+  --send-btn-disabled-bg: rgba(45, 52, 73, 0.6);
+  --send-btn-disabled-color: rgba(194, 198, 214, 0.3);
+  --error-bg: rgba(147, 0, 10, 0.3);
+  --error-border: rgba(255, 180, 171, 0.2);
+  --error-text: #ffb4ab;
+  --code-bg: rgba(6, 14, 32, 0.6);
+  --code-color: #adc6ff;
+  --pre-bg: rgba(6, 14, 32, 0.8);
+  --pre-border: rgba(66, 71, 84, 0.3);
+  --strong-color: #dae2fd;
+  --link-color: #adc6ff;
+  --gradient-1: rgba(173, 198, 255, 0.05);
+  --gradient-2: rgba(223, 116, 18, 0.05);
+  --modal-overlay: rgba(0, 0, 0, 0.7);
+  --modal-bg: #131b2e;
+  --modal-border: #424754;
+  --modal-input-bg: #171f33;
+  --modal-input-border: #424754;
+}
+
+/* Light mode */
+html.light {
+  --app-bg: #f8fafc;
+  --app-text: #1e293b;
+  --sidebar-bg: #ffffff;
+  --sidebar-border: rgba(226, 232, 240, 0.6);
+  --header-bg: rgba(248, 250, 252, 0.85);
+  --card-bg: #ffffff;
+  --input-bg: rgba(255, 255, 255, 0.95);
+  --input-border: rgba(203, 213, 225, 0.5);
+  --input-text: #1e293b;
+  --input-placeholder: rgba(100, 116, 139, 0.5);
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-brand: #1e293b;
+  --text-accent: #3b82f6;
+  --text-accent-subtle: rgba(59, 130, 246, 0.5);
+  --accent-color: #3b82f6;
+  --accent-hover: #2563eb;
+  --hover-bg: rgba(59, 130, 246, 0.08);
+  --hover-bg-subtle: rgba(241, 245, 249, 0.8);
+  --new-chat-bg: rgba(59, 130, 246, 0.08);
+  --new-chat-text: #3b82f6;
+  --bubble-user-bg: rgba(59, 130, 246, 0.1);
+  --bubble-ai-bg: #ffffff;
+  --bubble-ai-border: rgba(226, 232, 240, 0.8);
+  --bubble-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --input-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --input-focus-border: rgba(59, 130, 246, 0.4);
+  --profile-bg: #f1f5f9;
+  --scrollbar-thumb: #cbd5e1;
+  --engine-badge-bg: rgba(241, 245, 249, 0.8);
+  --send-btn-bg: linear-gradient(to top right, #60a5fa, #3b82f6);
+  --send-btn-disabled-bg: rgba(226, 232, 240, 0.6);
+  --send-btn-disabled-color: rgba(148, 163, 184, 0.5);
+  --error-bg: rgba(254, 226, 226, 0.6);
+  --error-border: rgba(252, 165, 165, 0.4);
+  --error-text: #dc2626;
+  --code-bg: rgba(241, 245, 249, 0.8);
+  --code-color: #e11d48;
+  --pre-bg: #f8fafc;
+  --pre-border: #e2e8f0;
+  --strong-color: #1e293b;
+  --link-color: #3b82f6;
+  --gradient-1: rgba(59, 130, 246, 0.03);
+  --gradient-2: rgba(251, 146, 60, 0.03);
+  --modal-overlay: rgba(0, 0, 0, 0.4);
+  --modal-bg: #ffffff;
+  --modal-border: #e2e8f0;
+  --modal-input-bg: #f8fafc;
+  --modal-input-border: #e2e8f0;
+}
