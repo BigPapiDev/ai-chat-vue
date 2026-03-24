@@ -24,6 +24,30 @@ export interface UseAIStreamReturn {
 const API_URL = '/api/chat'
 const MAX_RETRIES = 3
 
+// Fun fallback responses when API quota is exhausted
+const FALLBACK_RESPONSES = [
+  "Un esercito di scimmie sta digitando furiosamente sulla tastiera per risolvere il problema! 🐒🔧",
+  "Le quote API sono finite: sto mandando un piccione viaggiatore a Google per ricaricarle! 🐦📨",
+  "La chiave è esaurita! Immagina un esercito di pinguini che scava nel ghiaccio per trovarne una nuova. 🐧⛄",
+  "API ko: un team di gatti ninja sta hackerando il server Gemini in questo momento! 🐱💻",
+  "Scimmie al lavoro! Stanno provando tutte le banane possibili per sbloccare la quota. 🍌🐒",
+  "Quota zero: ho convocato gli alieni dello spazio per una ricarica intergalattica! 👽🚀",
+  "La chiave è partita in vacanza. Un'orda di formiche operaie la sta inseguendo! 🐜🏖️",
+  "Errore 429: supereroi robotici stanno combattendo il mostro 'Rate Limit'! 🤖🦸‍♂️",
+  "Scimmie in sciopero! Chiedono più banane prima di fixare l'API. 😿🍌",
+  "API esausta: un drago sta custodendo la quota, ma lo sto convincendo con caramelle! 🐉🍬",
+  "Esercito di scoiattoli iperattivi sta raccogliendo token persi nei boschi! 🐿️🌳",
+  "La chiave si è nascosta. Squadra di detective elefanti la sta fiutando! 🐘🔍",
+  "Quote finite: zombie caffè-dipendenti stanno codificando il fix tutta la notte! ☕🧟",
+  "Scimmie volanti con jetpack in missione per ricaricare Gemini! 🐵🪂",
+  "API in pausa caffè. Un'orda di castori sta costruendo un nuovo server! 🦫☕",
+]
+
+function getRandomFallback(): string {
+  const index = Math.floor(Math.random() * FALLBACK_RESPONSES.length)
+  return FALLBACK_RESPONSES[index]!
+}
+
 /**
  * Convert store Message[] to format expected by API
  */
@@ -112,9 +136,10 @@ export function useAIStream(): UseAIStreamReturn {
 
       } catch (err) {
         console.error(`AI Stream Error (attempt ${attempt + 1}/${MAX_RETRIES}):`, err)
-        
+
         if (attempt === MAX_RETRIES - 1) {
-          error.value = err instanceof Error ? err : new Error(String(err))
+          // AI couldn't respond - use fun fallback message
+          response.value = getRandomFallback()
           isStreaming.value = false
           return
         }

@@ -95,7 +95,8 @@ export const useChatStore = defineStore('chat', () => {
     // Finalize assistant message
     const msg = messages.value.find((m) => m.id === assistantMessage.id)
     if (msg) {
-      msg.content = streamResponse.value
+      // Use fallback if response is empty (API error case)
+      msg.content = streamResponse.value || 'Scimmie al lavoro! Stanno provando tutte le banane possibili per sbloccare la quota. 🍌🐒'
       msg.isStreaming = false
     }
 
