@@ -6,6 +6,9 @@
 ![VueUse](https://img.shields.io/badge/VueUse-14.2-41B883)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-4.2-06B6D4?logo=tailwindcss&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-Live-000000?logo=vercel&logoColor=white)
+
+🚀 **Live Demo:** [https://ai-chat-vue-six.vercel.app](https://ai-chat-vue-six.vercel.app)
 
 A modern AI chat interface built with **Vue 3.5** and **Gemini API** featuring real-time token-by-token streaming, speech-to-text input, and a dark glassmorphism design. Built to showcase advanced Vue.js competencies.
 
